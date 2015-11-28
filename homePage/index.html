@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<title>MISC</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
 </head>
 <body>
-
+    <div class="container">
+        <div id="boxgallery" class="boxgallery" data-effect="effect-1">
+            <div class="panel"><img src="img/1.jpg" alt="Image 1"/></div>
+            <div class="panel"><img src="img/2.jpg" alt="Image 2"/></div>
+            <div class="panel"><img src="img/3.jpg" alt="Image 3"/></div>
+            <div class="panel"><img src="img/4.jpg" alt="Image 4"/></div>
+<!--             <div class="panel"><img src="img/5.jpg" alt="Image 5"/></div>
+ -->        </div>
+        <header class="codrops-header">
+                <h1>Michigan Interactive &amp Social Computing<span>Connects researchers studying human-computer interaction, social computing, and computer-supported cooperative work across the University of Michigan.
+                </span></h1>
+                <nav class="codrops-demos">
+<!--                     <a class="current-demo" href="index.html">Home</a>
+ -->                    <a href="event.html">Event</a>
+                    <a href="people.html">People</a>
+                    <a href="aboutUs.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+        </header>
+    </div>
 	
 <!-- footer -->
 
@@ -13,7 +41,7 @@
 
             <div class="footer-column column-one">
                 <!-- U OF M LOGO -->
-                <!-- <h1><a href="./img/UM-Logo">University of Michigan</a></h1> -->
+                <h1><a href="./University of Michigan_files/University of Michigan.html">University of Michigan</a></h1>
 
                 
 
@@ -42,8 +70,13 @@
         </div>
     </div>
 
-    
+    <script src="js/classie.js"></script>
+    <script src="js/boxesFx.js"></script>
+    <script>
+        new BoxesFx( document.getElementById( 'boxgallery' ) );
+    </script>    
 		
+
 
 
 <!-- end footer -->
