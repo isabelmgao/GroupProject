@@ -18,9 +18,8 @@ if ( isset($_POST['email']) && isset($_POST['pass'])) {
     $stmt->execute(array( ':em' => $_POST['email'], ':pw' => $check));
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if ( $row !== false ) {
-        $_SESSION['name'] = $row['name']; //does it create this 'name' key on the fly? yes
+        $_SESSION['name'] = $row['name'];
         $_SESSION['user_id'] = $row['user_id'];
-        // Redirect the browser to view.php
         header("Location: add.php");
         exit();
       }else{
@@ -41,7 +40,7 @@ if ( isset($_SESSION['error']) ) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Isabel Gao's Login Page</title>
+<title>Login Page</title>
 </head>
 <!--
 Password: name of program + acronym (all lowercase)
