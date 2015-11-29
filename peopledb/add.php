@@ -56,6 +56,7 @@ if ( strlen($_POST['first_name'])<1 || strlen($_POST['last_name'])<1 || strlen($
 <p>Headline:<br/>
 <input type="text" name="website" size="80"/></p>
 <p>Summary:<br/>
+<!-- what field would be required to upload faculty photo? -->
 <textarea name="summary" rows="8" cols="80">
 </textarea>
 <p>
