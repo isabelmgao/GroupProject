@@ -1,5 +1,60 @@
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600');
+@import url('http://fonts.googleapis.com/css?family=Raleway:200,400,600');
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600');
+
+.navbar-default .navbar-brand {
+    margin-left: 20px;
+}
+nav li {
+    border: 2px solid #FFFFFF;
+    margin: 10px;
+    padding-top: -5px;
+    padding-bottom: -5px;
+
+}
+
+nav {
+    font-family: Raleway;
+
+}
+
+ul {
+    margin: 0px;
+}
+.column {
+    margin: 20px;
+}
+
+.column p {
+    margin-top: 20px;
+}
+.panel-default {
+    margin-top: 35px;
+}
+.codrops-demos {
+	padding-top: 2em;
+	font-size: 0.8em;
+    float: right;
+}
+
+.codrops-demos a {
+	display: inline-block;
+	margin: 0.5em;
+	padding: 0.7em 1.1em;
+	outline: none;
+	border: 2px solid #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	width: 165px;
+}
+
+.codrops-demos a:hover,
+.codrops-demos a.current-demo,
+.codrops-demos a.current-demo:hover {
+	color: #debcc3;
+	border-color: #debcc3;
+}
 
 .options li {
     display: inline;
@@ -15,7 +70,7 @@ iframe {
 }
 .column .description {
 /*    width: 50%;
-*/    
+*/
     display: inline-block;
     background: red;
 }
@@ -36,9 +91,7 @@ h3 {
     margin-bottom: 30px;
 }
 
-.column p {
-    margin-top: -2%;
-}
+
 
 .seminar {
     width: 100%;
@@ -64,7 +117,9 @@ body {
   width: 100%;
 }
 
-
+footer {
+    background-image: url("img/subtle_white_mini_waves.png");
+}
 
 
 .myClass {
@@ -105,7 +160,7 @@ nav {
 }
 .navbar-default {
     color: #342e41;
-    background-color: #F7F7F7;
+    background-color: #EFEFEF;
 }
 .navbar-brand {
     float: left;
@@ -206,12 +261,15 @@ figcaption {
     display: block;
 }
 
+ul.unstyled {
+    background: url('img/subtle_white_mini_waves.png');
+}
 footer {
-    background: #1BB5B3;
+    background: #A1570E;
 }
 
-footer p {
-    color: #FFF;
+footer li {
+    color: #485164;
 }
 
 footer{
@@ -796,7 +854,7 @@ p.col-sm-4.col-md-4.col-lg-4.address {
         width: 100%;
     }
 
-    
+
 
 
     .head1 img {
@@ -1041,13 +1099,12 @@ hr {
     -o-background-size: cover;
 }
 
-.panel-body {
-    width: 46%;
-}
+
 
 /*links should not be underlined*/
 a:hover {
     text-decoration: none;
+    color: #DADDE0;
 }
 
 .copyright li {
@@ -1055,6 +1112,10 @@ a:hover {
 }
 
 
+panel-default {
+    width: 300px;
+
+}
 /*resume stuff exploration*/
 
 .page-header{
