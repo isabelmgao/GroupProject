@@ -13,11 +13,22 @@ nav li {
 
 }
 
+
+
+img {
+    max-width: none;
+}
+iframe {
+    margin-top: 30px;
+}
 nav {
     font-family: Raleway;
 
 }
 
+nav a {
+
+}
 ul {
     margin: 0px;
 }
@@ -25,9 +36,7 @@ ul {
     margin: 20px;
 }
 
-.column p {
-    margin-top: 20px;
-}
+
 .panel-default {
     margin-top: 35px;
 }
@@ -160,8 +169,9 @@ nav {
 }
 .navbar-default {
     color: #342e41;
-    background-color: #EFEFEF;
+    background-color: #8897AD;
 }
+
 .navbar-brand {
     float: left;
     height: 50px;
@@ -177,16 +187,16 @@ nav {
     margin-left: -40px;
 }
 .navbar-default .navbar-brand {
-    color: #485164;
+    color: #FFFFFF;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #485164;
+    color: #FFF;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+/*.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
     border-bottom: 1px solid #39404d;
-}
+}*/
 
 
 .h2, h2 {
@@ -265,7 +275,7 @@ ul.unstyled {
     background: url('img/subtle_white_mini_waves.png');
 }
 footer {
-    background: #A1570E;
+    background: #6A778E;
 }
 
 footer li {
@@ -293,6 +303,7 @@ footer {
     line-height: 100px;
     text-align: center;
     text-transform: uppercase;
+    margin-top: 500px;
 }
 
 footer a {
