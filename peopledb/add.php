@@ -51,14 +51,14 @@ if ( strlen($_POST['first_name'])<1 || strlen($_POST['last_name'])<1 || strlen($
 <input type="text" name="first_name" size="60"/></p>
 <p>Last Name:
 <input type="text" name="last_name" size="60"/></p>
-<p>Email:
-<input type="text" name="email" size="30"/></p>
-<p>Headline:<br/>
+<p>Department:<br/>
 <input type="text" name="website" size="80"/></p>
-<p>Summary:<br/>
-<!-- what field would be required to upload faculty photo? -->
-<textarea name="summary" rows="8" cols="80">
-</textarea>
+</form>
+<!-- Upload photo -->
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload (if applicable):
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
 <p>
 <input type="submit" value="Add">
 <input type="submit" name="cancel" value="Cancel">
