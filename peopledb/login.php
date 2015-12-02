@@ -18,13 +18,13 @@ if ( isset($_POST['email']) && isset($_POST['pass'])) {
     $stmt->execute(array( ':em' => $_POST['email'], ':pw' => $check));
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if ( $row !== false ) {
-        $_SESSION['name'] = $row['name'];
+        $_SESSION['name'] = $row['name']; //these come from $row array, which extracts data from db in SELECT statement above, stores in $SESSION so that it can be transmitted acros php files
         $_SESSION['user_id'] = $row['user_id'];
         header("Location: add.php");
         exit();
       }else{
       $_SESSION['error'] = "Incorrect Password";
-      header("Location: index.php");
+      header("Location: login.php");
       exit();
     }
   }
@@ -43,13 +43,13 @@ if ( isset($_SESSION['error']) ) {
 <title>Login Page</title>
 </head>
 <!--
-Password: name of program + acronym (all lowercase)
+Password: 'umich' + acronym (all lowercase, no spaces)
 Name: Administrator // Sunny // Xiaojie //Isabel // Pei-Yao
 Email: misc@gmail.com // syschoi@umich.edu // liuxj@umich.edu // imgao@umich.edu //peiyaoh@umich.edu
 -->
 <body style="font-family: sans-serif;">
 <h1>Please Log In</h1>
-<form method="POST" action="index.php">
+<form method="POST">
 <label for="email">Email</label>
 <input type="text" name="email" id="email"><br/>
 <label for="id_1723">Password</label>
