@@ -2,24 +2,11 @@
 require_once "pdo.php";
 session_start();
 
-$stmt = $pdo->prepare("SELECT * FROM Profile where profile_id = :xyz");
-$stmt->execute(array(":xyz" => $_GET['id']));  //where is the get method receiving auto_id from? coming from id GET parameter sent from view.php
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-if ( $row === false ) {
-    $_SESSION['error'] = 'Bad value for profile_id';
-    header( 'Location: index.php' ) ;
-    return;
-  }
-
-$fn = htmlentities($row['first_name']);
-$ln = htmlentities($row['last_name']);
-$email = htmlentities($row['email']);
-$hl = htmlentities($row['headline']);
-$sm = htmlentities($row['summary']);
-$profile_id = $row['profile_id'];
+if ( ! isset($_SESSION['name']) ) {
+    die("ACCESS DENIED");
+}
 ?>
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,17 +35,20 @@ $profile_id = $row['profile_id'];
         </div>
 
         <!-- vvvvvvvvvvvvvv-FACE OF THE ORG-vvvvvvvvvvvvvv -->
+    <div class="col-sm-9">
+        <div class="row">
 <?php
-  $stmt = $pdo->query("SELECT first_name, last_name, headline FROM Profile");
-  while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
-    echo('<div class="col-sm-9">
-      <div class="row">
-        <div class="col-sm-3">
+    $stmt = $pdo->query("SELECT first_name, last_name, department FROM Profile");
+    while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
+      echo('<div class="col-sm-3">
           <img class="img-rounded" src="img/left2.jpg">
-          <p class="caption">'); echo(htmlentities($row['first_name'].$row['last_name']'</p>');
-      echo(  '</div>');
+        <p class="caption">');
+      echo(htmlentities($row['first_name']).' '.htmlentities($row['last_name']).' '.htmlentities($row['department']));
+      echo('</p> </div>');
     }
 ?>
+      </div>
+  </div>
 </body>
 
 
