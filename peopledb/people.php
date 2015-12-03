@@ -38,10 +38,10 @@ if ( ! isset($_SESSION['name']) ) {
     <div class="col-sm-9">
         <div class="row">
 <?php
-    $stmt = $pdo->query("SELECT first_name, last_name, department FROM Profile");
+    $stmt = $pdo->query("SELECT first_name, last_name, department, filename FROM Profile");
     while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
       echo('<div class="col-sm-3">
-          <img class="img-rounded" src="img/left2.jpg">
+          <img class="img-rounded" src="'.$row['filename'].'"/>
         <p class="caption">');
       echo(htmlentities($row['first_name']).' '.htmlentities($row['last_name']).' '.htmlentities($row['department']));
       echo('</p> </div>');
