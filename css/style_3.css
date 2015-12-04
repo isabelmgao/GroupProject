@@ -13,6 +13,23 @@ nav li {
 
 }
 
+
+
+
+
+body {
+    background-color: #F9f9f9;
+}
+
+.panel-default>.panel-heading {
+    background-color: #DADDE0;
+    color: #342e41;
+}
+
+div.column {
+    padding-top: -20px;
+}
+
 #marshall img {
     margin-left: -3px;
     margin-top: 15px;
@@ -74,6 +91,10 @@ ul {
 }
 
 .btn-primary {
+    margin-top: 25px;
+}
+
+#marshall-page .btn-primary {
     margin-top: 10px;
 }
 
@@ -315,7 +336,7 @@ footer {
     line-height: 100px;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 800px;
+    margin-top: 900px;
 }
 
 footer a {
@@ -1317,3 +1338,49 @@ opacity:0.9;
 #marshall-page footer {
     margin-top: 200px;
 }
+
+.abstract {
+    /*margin: 0 auto;*/
+    width: 800px;
+/*    margin-left: 200px;
+*/}
+
+.bio {
+/*    margin: 0 auto;
+*/    width: 800px;
+/*    margin-left: 200px;
+*/}
+
+#marshall-page .row {
+    margin: 0 auto;
+    margin-left: 200px;
+/*    margin-left: 300px;
+*/}
+
+.column p {
+    float: left;
+    margin-top: 30px;
+    width: 90%;
+}
+
+.column img {
+    margin-top: -120px;
+    margin-left: -20px;
+}
+
+.column a {
+    color: #309DDC;
+}
+
+.column a:hover {
+    color: #0080c0;
+}
+
+.pagination {
+     clear: left;
+     clear: right;
+     display: block;
+     /*margin-left: 500px;*/
+     text-align: center;
+     margin-top: 60px;
+ }
