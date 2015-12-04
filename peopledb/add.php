@@ -44,7 +44,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
     //    }
 
     // Check file size
-    if ($_FILES["fileToUpload"]["size"] > 500000) {
+    if ($_FILES["fileToUpload"]["size"] > 5000000) {
         $_SESSION['error']="Sorry, your file is too large.";
         header("Location: add.php");
         return;
@@ -76,33 +76,40 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
 <html>
 <head>
 <title><?php echo($_SESSION['name'])?>'s Profile Add</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/img/iconthumb.jpg">
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/database.css">
 </head>
 <body style="font-family: sans-serif;">
 <?php
   if ( isset($_SESSION['error']) ) {
-    echo('<p style="color: red;">'.htmlentities($_SESSION['error'])."</p>\n");
+    echo('<p class="success">'.htmlentities($_SESSION['error'])."</p>\n");
     unset($_SESSION['error']);
   }
   if ( isset($_SESSION['success']) ) {
-    echo('<p style="color: green;">'.htmlentities($_SESSION['success'])."</p>\n");
+    echo('<p class="error">'.htmlentities($_SESSION['success'])."</p>\n");
     unset($_SESSION['success']);
   }
   if ( isset($_SESSION['error2']) ) {
-      echo('<p style="color: red;">'.htmlentities($_SESSION['error2'])."</p>\n");
+      echo('<p class="success">'.htmlentities($_SESSION['error2'])."</p>\n");
     unset($_SESSION['success']);
   }
 ?>
-<h1>Add a member</h1>
-<form method="post" enctype="multipart/form-data">
+<h1 class="add">Add a member</h1>
+<form class="add" method="post" enctype="multipart/form-data">
 <p>First Name:
 <input type="text" name="first_name" size="60"/></p>
 <p>Last Name:
 <input type="text" name="last_name" size="60"/></p>
-<p>Department:<br/>
-<input type="text" name="department" size="80"/></p>
+<p>Department:
+<input type="text" name="department" size="60"/></p>
 <!-- Upload photo -->
-<p> Upload a profile picture (if available):
-<input type="file" name="fileToUpload" id="fileToUpload"></p>
+<div class="picUpload">
+<p> Upload a profile picture (if available):</p>
+<input type="file" name="fileToUpload" id="fileToUpload"/>
+</div>
 <p>
 <input type="submit" value="Add">
 <input type="submit" name="cancel" value="Cancel">
