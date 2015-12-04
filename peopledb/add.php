@@ -92,10 +92,6 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
     echo('<p class="error">'.htmlentities($_SESSION['success'])."</p>\n");
     unset($_SESSION['success']);
   }
-  if ( isset($_SESSION['error2']) ) {
-      echo('<p class="success">'.htmlentities($_SESSION['error2'])."</p>\n");
-    unset($_SESSION['success']);
-  }
 ?>
 <h1 class="add">Add a member</h1>
 <form class="add" method="post" enctype="multipart/form-data">
