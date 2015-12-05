@@ -1,3 +1,10 @@
+.panel{
+  margin-top: 11%;
+}
+.panel-body>h3{
+  margin-top: 10px;
+}
+
 .img-rounded{
   border-radius: 6px;
   display: block;
@@ -18,6 +25,10 @@
   text-align: center;
 }
 
+#inchright{
+  margin-left: 8px;
+}
+
 .add{
   display: block;
   text-align: center;
@@ -27,7 +38,7 @@
 .picUpload{
   display: inline-block;
   margin-right: 190px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .picUpload>p{
   margin-right: 95px;
@@ -46,4 +57,14 @@ input[type=submit]{
   font-size: 20px;
   color: green;
   text-align: center;
+}
+
+.membership{
+  margin:0 auto;
+  padding-top: 50px;
+  margin-right: 415px;
+}
+
+select{
+  margin-right: 387px;
 }

@@ -27,9 +27,9 @@ if ( ! isset($_SESSION['name']) ) {
               <h2 class="panel-title">Members</h2>
             </div>
             <div class="panel-body">
-              <h3 class="panel-title">Faculty</h3>
-              <h3 class="panel-title">Students</h3>
-              <h3 class="panel-title">Alumni</h3>
+              <h3 class="panel-title"><a href="people.php">Faculty</a></h3>
+              <h3 class="panel-title"><a href="people.php">Students</a></h3>
+              <h3 class="panel-title"><a href="people.php">Staff</a></h3>
             </div>
           </div>
         </div>
@@ -37,14 +37,18 @@ if ( ! isset($_SESSION['name']) ) {
         <!-- vvvvvvvvvvvvvv-FACE OF THE ORG-vvvvvvvvvvvvvv -->
     <div class="col-sm-9">
         <div class="row">
+
 <?php
-    $stmt = $pdo->query("SELECT first_name, last_name, department, filename FROM Profile");
-    while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
-      echo('<div class="col-sm-3">
-          <img class="img-rounded" src="'.$row['filename'].'"/>
-        <p class="caption">');
-      echo(htmlentities($row['first_name']).' '.htmlentities($row['last_name']).' '.htmlentities($row['department']));
-      echo('</p> </div>');
+    $stmt = $pdo->query("SELECT first_name, last_name, department, website, filename
+                    FROM Profile");
+    while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) )
+    {
+        echo '<div class="col-sm-3">
+                <img class="img-rounded" src="'.$row['filename'].'"/>
+                <p class="caption">';
+        echo '<a href="'.htmlentities($row['website']).'">'.$row['first_name'].' '.htmlentities($row['last_name']).'</a>';
+        echo ', '.htmlentities($row['department']);
+        echo '</p> </div>';
     }
 ?>
       </div>

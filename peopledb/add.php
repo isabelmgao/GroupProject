@@ -22,6 +22,12 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
           return;
     }
 
+    if($_POST['membership']===0){
+      $_SESSION['error'] = "Please select member status: faculty, grad, or alumni";
+       header("Location: add.php");
+       return;
+    }
+
     // Do all that image upload.php
     $target_dir = "member_img/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -58,12 +64,13 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
 
     //text fields
     $stmt = $pdo->prepare('INSERT INTO Profile
-        (user_id, first_name, last_name, department, filename) VALUES ( :uid, :fn, :ln, :depar, :file )');
+        (user_id, first_name, last_name, department, filename, membership) VALUES ( :uid, :fn, :ln, :depar, :file, :member )');
     $stmt->execute(array(
         ':uid' => $_SESSION['user_id'],
         ':fn' => $_POST['first_name'],
         ':ln' => $_POST['last_name'],
         ':depar' => $_POST['department'],
+        ':member' => $_POST['membership'],
         ':file' => $target_file));
 
     $_SESSION['success']="Record added";
@@ -101,11 +108,24 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
 <input type="text" name="last_name" size="60"/></p>
 <p>Department:
 <input type="text" name="department" size="60"/></p>
+<p> &nbsp &nbsp Website:
+<input id="inchright" type="text" name="department" size="60"/></p>
 <!-- Upload photo -->
 <div class="picUpload">
 <p> Upload a profile picture (if available):</p>
 <input type="file" name="fileToUpload" id="fileToUpload"/>
 </div>
+<p class="membership">Member Status:</p>
+<select name="membership">
+        <option value="0">Choose...</option>
+        <option value="faculty">Faculty</option>
+        <option value="0">______________</option>
+        <option value="phd">PhD Student</option>
+        <option value="masters">Master's Student</option>
+        <option value="undergrad">Bachelor's Student</option>
+        <option value="0">______________</option>
+        <option value="alum">Alumnus</option>
+</select>
 <p>
 <input type="submit" value="Add">
 <input type="submit" name="cancel" value="Cancel">
