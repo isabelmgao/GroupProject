@@ -5,13 +5,13 @@
 .navbar-default .navbar-brand {
     margin-left: 20px;
 }
-nav li {
-    border: 2px solid #FFFFFF;
-    margin: 10px;
+/*nav li {*/
+/*    border: 2px solid #FFFFFF;
+*/   /* margin: 10px;
     padding-top: -5px;
     padding-bottom: -5px;
 
-}
+}*/
 
 
 
@@ -60,7 +60,7 @@ ul {
 .panel-default {
     margin-top: 35px;
 }
-.codrops-demos {
+/*.codrops-demos {
 	padding-top: 2em;
 	font-size: 0.8em;
     float: right;
@@ -83,7 +83,7 @@ ul {
 .codrops-demos a.current-demo:hover {
 	color: #debcc3;
 	border-color: #debcc3;
-}
+}*/
 
 .options li {
     display: inline;
@@ -159,10 +159,10 @@ body {
   width: 100%;
 }
 
-footer {
+/*footer {
     background-image: url("img/subtle_white_mini_waves.png");
 }
-
+*/
 
 .myClass {
     vertical-align: middle;
@@ -181,6 +181,34 @@ nav {
     width: 100%;
 }
 
+
+
+.codrops-demos {
+    padding-top: 2em;
+    font-size: 0.8em;
+    font-family: 'Lato', sans-serif;
+
+    text-align: center;
+}
+
+.codrops-demos a {
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.7em 1.1em;
+    outline: none;
+    border: 2px solid #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 165px;
+}
+
+.codrops-demos a:hover,
+.codrops-demos a.current-demo,
+.codrops-demos a.current-demo:hover {
+    color: #FFC44F;
+    border-color: #FFC44F;
+}
 /*.card {
     background-color: white;
     /*padding: 20px;*/
@@ -202,7 +230,8 @@ nav {
 }
 .navbar-default {
     color: #342e41;
-    background-color: #8897AD;
+    background-color: #002c5a;
+    opacity: 70%;
 }
 
 .navbar-brand {
@@ -212,7 +241,7 @@ nav {
     font-size: 26px;
     line-height: 20px;
     letter-spacing: 2px;
-    /*border-right: 1px solid #DADDE0;*/
+    /*f-right: 1px solid #DADDE0;*/
     /*padding-right: 20px;*/
 }
 
@@ -308,32 +337,33 @@ ul.unstyled {
     background: url('img/subtle_white_mini_waves.png');
 }
 footer {
-    background: #6A778E;
+    background: #002c5a;
+    clear: both;
+    text-align:center;
+    text-transform: uppercase;
 }
 
 footer li {
     color: #485164;
+    clear: both;
+    display: inline;
+    margin: 2.5%;
+}
+footer p{
+    color: #ffffff;
+
 }
 
-footer{
-	clear: both;
-	text-align:center;
-	text-transform: uppercase;
-}
 
 ul {
     list-style-type: none;
 }
 
-footer li {
-    clear: both;
-    display: inline;
-    margin: 2.5%
-}
+
 
 footer {
-    height: 100px;
-    line-height: 100px;
+    height: 200px;
+    line-height: 90px;
     text-align: center;
     text-transform: uppercase;
     margin-top: 900px;
@@ -346,8 +376,14 @@ footer a {
 }
 
 i {
-    color: #F3F3F3;
+    color: #FFC44F;
 }
+
+.footer-note{
+    line-height: 30px;
+    font-size: 0.7em;
+}
+
 
 /* centered columns styles */
 .row-centered {
