@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/contact_style.css"/>
+	<meta charset="UTF-8">
+	<title>Form</title>
+	
+
+	<script type="text/javascript">
+	 function checkEmail(){
+	 	if (em.value != em2.value){
+			alert("The emails must match!");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<form action="gotIt.php" method = "POST" onsubmit = "return checkEmail()">
+<fieldset>
+    <div id="content-form">
+        <div class="container">
+    	<legend><h2>Contact Us</h2></legend>
+    	<label>Name: <input type = "name" name = "name" value = "" required/></label>
+    	<label>Email:<input type = "email" name = "email" id = "em" required/></label>
+    	<!-- <label>Confirm Email:<input type = "email" name = "confirm" id = "em2" required/></label> -->
+    	<label>Message:<input type = "textarea" name = "message" required/></label>
+    	<input type = "submit" value ="Send"/>
+    </div>
+    </div>
+
+</fieldset>
+
+</form>
+</body>
+</html>

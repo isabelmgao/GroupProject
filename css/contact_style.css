@@ -1,0 +1,86 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600');
+
+input{
+    display:block;
+    padding: 1%;
+    background-color: #FFF;
+    margin: 5%;
+    font-size: 14px;
+    font-family: inherit;
+}
+input:focus{
+    background-color: #EFEFEF;
+}
+fieldset{
+    padding-left: 5em;
+    border: none;
+    margin: 2%;
+
+
+}
+legend h2 {
+    color: #002c5a;
+}
+
+
+legend {
+    text-align: center;
+}
+body {
+    font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+label {
+    height: 200%;
+}
+
+input {
+    color: #342e41;
+}
+
+input[type=text] {
+padding:5px;
+border:2px solid #ccc;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+color: #FFF;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    margin-top: 20px;
+    background:#002c5a;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #FFF;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+
+input, textarea, select, button {
+  width : 300px;
+  margin: 0 ;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+}
+#content-id {
+    margin: 0 auto;
+    display:  block;
+
+}
