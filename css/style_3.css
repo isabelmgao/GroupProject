@@ -35,6 +35,7 @@ div.column {
     margin-top: 15px;
 }
 
+
 img {
     max-width: none;
 }
@@ -181,13 +182,14 @@ nav {
     width: 100%;
 }
 
-
+.navbar-toggle{
+    float: right;
+}
 
 .codrops-demos {
     padding-top: 2em;
     font-size: 0.8em;
     font-family: 'Lato', sans-serif;
-
     text-align: center;
 }
 
@@ -208,6 +210,10 @@ nav {
 .codrops-demos a.current-demo:hover {
     color: #FFC44F;
     border-color: #FFC44F;
+}
+
+.navbar-toggle{
+    float: right;
 }
 /*.card {
     background-color: white;
@@ -245,9 +251,14 @@ nav {
     /*padding-right: 20px;*/
 }
 
-.navbar-brand img {
-    margin-left: -40px;
+.navbar-brand {
+    position: relative;
+    padding-left: 35px;
+    margin-top: 0px;
+    -webkit-transition: width 0.1s;
+    -moz-transition: width 0.1s;
 }
+
 .navbar-default .navbar-brand {
     color: #FFFFFF;
 }
@@ -1021,7 +1032,9 @@ hr {
 
 }
 
-
+.aboutUs img{
+    margin-top: 50px;
+}
 
 
 @media only screen and (min-width : 768px) {
