@@ -60,10 +60,12 @@ input[type=submit] {
     color: #FFF;
     font-family: inherit;
     font-size: 16px;
+    display: inline-block;
 }
 
 input {
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 
