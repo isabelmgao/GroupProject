@@ -13,3 +13,14 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/database.css">
 </head>
+
+<?php
+include 'header.php';
+?>
+
+<body>
+  <?php
+  include 'footer.php';
+  ?>
+</body>
+<html>
