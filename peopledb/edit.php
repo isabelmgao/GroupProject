@@ -11,7 +11,7 @@ session_start();
  }
 
 if(isset($_POST['cancel'])){
-  header( 'Location: index.php' ) ;
+  header( 'Location: members.php' ) ;
   return;
 }
 
@@ -114,7 +114,7 @@ $profile_id = $row['profile_id'];
 <body style="font-family: sans-serif;">
 <h1>Editing MISC Member </h1>
 
-<form method="post" action="edit.php">
+<form method="post" action="edit.php" enctype="multipart/form-data">
 <p>First Name:
 <input type="text" name="first_name" size="60" value="<?= $fn ?>"
 /></p>
