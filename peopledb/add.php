@@ -120,11 +120,10 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
         <option value="0">Choose...</option>
         <option value="faculty">Faculty</option>
         <option value="0">______________</option>
-        <option value="phd">PhD Student</option>
-        <option value="masters">Master's Student</option>
-        <option value="undergrad">Bachelor's Student</option>
+        <option value="students">PhD Student</option> <!-- must match get id parameter -->
+        <option value="students">Master's Student</option>
         <option value="0">______________</option>
-        <option value="alum">Alumnus</option>
+        <option value="alumni">Alumnus</option>
 </select>
 <p>
 <input type="submit" value="Add">
