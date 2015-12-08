@@ -7,7 +7,7 @@ if ( ! isset($_SESSION['name']) ) {
 }
 
 if(isset($_POST['cancel'])){
-  header( 'Location: index.php' ) ;
+  header( 'Location: home_nav.php' ) ;
   return;
 }
 
@@ -74,7 +74,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
         ':file' => $target_file));
 
     $_SESSION['success']="Record added";
-    header("Location: add.php");
+    header("Location: home_nav.php");
     return;
   }
  ?>
@@ -82,15 +82,17 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
 <!DOCTYPE html>
 <html>
 <head>
-<title><?php echo($_SESSION['name'])?>'s Profile Add</title>
+<!-- <title><?php echo($_SESSION['name'])?>'s Profile Add</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../static/img/iconthumb.jpg">
     <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/database.css">
-</head>
+</head> -->
 <body style="font-family: sans-serif;">
 <?php
+include 'header.php';
+
   if ( isset($_SESSION['error']) ) {
     echo('<p class="success">'.htmlentities($_SESSION['error'])."</p>\n");
     unset($_SESSION['error']);
@@ -131,5 +133,8 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
 </p>
 
 </form>
+<?php
+include 'footer.php';
+?>
 </body>
 </html>

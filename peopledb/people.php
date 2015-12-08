@@ -42,8 +42,8 @@ if ( ! isset($_SESSION['name']) ) {
 
 <?php
     $stmt = $pdo->query("SELECT first_name, last_name, department, website, filename, membership
-                    FROM Profile");
-    // $stmt->execute(array(":member" => $_GET['id']));
+                    FROM Profile where membership = :member");
+    $stmt->execute(array(":member" => $_GET['id']));
     while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) )
     {
         echo '<div class="col-sm-3">

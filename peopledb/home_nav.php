@@ -5,20 +5,26 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>MISC login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../static/img/iconthumb.jpg">
-    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/database.css">
-</head>
-
 <?php
 include 'header.php';
 ?>
 
 <body>
+
+  <div class="loader"></div>
+
+<div class="container-fluid text-center height-intro">
+  <div class="row height-intro">
+    <section id="left" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 customclass height-intro">
+      <a class="btn btn-default btn-lg btn-semi-transparent" href="add.php">Add a Member</a>
+    </section>
+
+    <section id="right" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 customclass height-intro">
+      <a class="btn btn-default btn-lg btn-semi-transparent" href="members.php">View Members</a>
+    </section>
+  </div>
+</div>
+
   <?php
   include 'footer.php';
   ?>
