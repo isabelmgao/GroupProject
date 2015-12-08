@@ -1,25 +1,62 @@
 <?php
 session_start();
 
-if(isset($_POST['name'])){
+if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
+  if(strlen($_POST['message']) >1){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-    $from = 'isabelmgao@gmail.com';
+    $from = 'MISC contact form';
+    $headers = "From: $from \r\n";
     $to = 'imgao@umich.edu';
     $subject = 'Contact from MISC';
     $body = "From: $name\n E-Mail: $email\n Message:\n $message";
 
-    if (mail ($to, $subject, $body, $from)) {
-        $_SESSION['success'] = "Your message has been sent!";
+    function IsInjected($str)
+    {
+        $injections = array('(\n+)',
+               '(\r+)',
+               '(\t+)',
+               '(%0A+)',
+               '(%0D+)',
+               '(%08+)',
+               '(%09+)'
+               );
+
+        $inject = join('|', $injections);
+        $inject = "/$inject/i";
+
+        if(preg_match($inject,$str))
+        {
+          return true;
+        }
+        else
+        {
+          return false;
+        }
+    }
+
+    if(IsInjected($email))
+    {
+        echo "Bad email value!";
+        exit;
+    }
+
+    if (mail ($to, $subject, $body, $headers)) {
+        $_SESSION['success'] = "Thanks for contacting us!";
         header("Location: form3.php");
         return;
-    } else {
-      $_SESSION['error'] = "All fields are required";
+    }
+  }
+
+    else {
+      $_SESSION['error'] = "You forgot to leave a message";
       header("Location: form3.php");
       return;
     }
-  }
+
+    }
+
 ?>
 
 
@@ -37,14 +74,14 @@ if(isset($_POST['name'])){
     <!-- <script src="js/modernizr.custom.63321.js"></script> -->
 	<meta charset="UTF-8">
 	<title>Contact Us</title>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 	 function checkEmail(){
 	 	if (em.value != em2.value){
 			alert("The emails must match!");
 			return false;
 		}
 	}
-</script>
+</script> -->
 </head>
 <body>
     <header>
@@ -74,7 +111,7 @@ if(isset($_POST['name'])){
             </div>
       </nav>
     </header>
-<form method = "POST" onsubmit = "return checkEmail()">
+<form method = "POST">
         <div class="container" "col-lg-12">
             <div id="content-form">
     <fieldset>

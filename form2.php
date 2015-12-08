@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_POST['first_name']) && isset($_POST['email']) &&
     isset($_POST['message'])) {
 
@@ -13,7 +12,7 @@ if (isset($_POST['first_name']) && isset($_POST['email']) &&
 
 	$to = $_POST["email"];
 	// $headers = "From: ". $_POST["name"] ."<".$_POST["email"]. ">\r\n";
-	$_SESSION['success'] = $msg;
+		$_SESSION['success'] = "Thank you for getting in touch!";
 	mail($to, 'Form Data');
 	header("Location: form2.php");
 	return;
