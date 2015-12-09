@@ -7,7 +7,7 @@ if ( ! isset($_SESSION['name']) ) {
 }
 
 if(isset($_POST['cancel'])){
-  header( 'Location: index.php' ) ;
+  header( 'Location: members.php' ) ;
   return;
 }
 
@@ -33,25 +33,25 @@ if ( $row === false ) {
 
 <!DOCTYPE html>
 <html>
-<head>
-<title>MISC Membmer Delete</title>
-</head>
-<body style="font-family: sans-serif;">
-<h1>Deleteing Profile</h1>
-<form method="post" action="delete.php">
 <?php
-echo("<p>First name: &nbsp");
-echo(htmlentities($row['first_name']));
-echo("</p>");
-echo("<p>Last name: &nbsp");
-echo(htmlentities($row['last_name']));
-echo("</p>");
+  include 'header.php';
+ ?>
+  <h1>Deleteing Profile</h1>
+  <form method="post" action="delete.php">
+<?php
+  echo'<label class="delete">Are you sure you want to delete:<br>';
+  echo('<p class="delete-name">'.htmlentities($row['first_name']).htmlentities($row['last_name']).'</p>');
+  // echo'</label> <label class="delete">Last name: &nbsp';
+  // echo(htmlentities($row['last_name']));
+  echo'</label>';
 ?>
-<input type="hidden" name="profile_id" value=<?=$row['profile_id']?>
-/>
-<input type="submit" name="delete" value="Delete">
-<input type="submit" name="cancel" value="Cancel">
-</p>
+  <input type="hidden" name="profile_id" value=<?=$row['profile_id']?>
+  />
+  <input type="submit" name="delete" value="Delete">
+  <input type="submit" name="cancel" value="Cancel">
 </form>
+<?php
+  include 'footer.php'
+ ?>
 </body>
 </html>

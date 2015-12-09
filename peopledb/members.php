@@ -6,20 +6,22 @@ if ( ! isset($_SESSION['name']) ) {
     die("ACCESS DENIED");
 }
 
-if ( isset($_SESSION['error']) ) {
-  echo('<p style="color: red;">'.htmlentities($_SESSION['error'])."</p>\n");
-  unset($_SESSION['error']);
-}
-if ( isset($_SESSION['success']) ) {
-  echo('<p style="color: green;">'.htmlentities($_SESSION['success'])."</p>\n");
-  unset($_SESSION['success']);
-}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>MISC Member Registry</title>
+<?php
+include 'header.php';
+if ( isset($_SESSION['error']) ) {
+    echo('<p class="flash-error">'.htmlentities($_SESSION['error'])."</p>\n");
+    unset($_SESSION['error']);
+  }
+if ( isset($_SESSION['success']) ) {
+    echo('<img class="flash-success" src="img/checkbox.jpg"><p class="flash-success">'.htmlentities($_SESSION['success'])."</p>\n");
+    unset($_SESSION['success']);
+}
+?>
 </head>
 <body style="font-family: sans-serif;">
 <h1>Edit Members</h1>
@@ -27,16 +29,24 @@ if ( isset($_SESSION['success']) ) {
 if(!isset($_SESSION['name'])){
 echo('<p><a href="login.php">Login</a></p>');
 }else {
-  echo('<p><a href="login.php">Logout</a></p>');
+  echo '<div class=text-center>';
+  echo('<a class="btn btn-default btn-md btn-semi-transparent" href="login.php">Logout</a></p>');
+  echo('<a class="btn btn-default btn-md btn-semi-transparent" href="add.php">Add member</a></p></div>');
 }
 ?>
-<table border="1">
-<tr><th>Name</th><th>Headline</th>
+<div class="container-fluid">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <table class="table table-bordered" border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Membership Status</th>
+            <th>Department</th>
 <?php
   if(isset($_SESSION['name'])){
-    echo("<th>Action</th>");
+      echo("<th>Action</th>");
   }
-  echo("</tr>");
+    echo("</tr></thead>");
 
   // echo('<table border="1">'."\n");
 $stmt = $pdo->query("SELECT * FROM Profile");
@@ -47,6 +57,8 @@ while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
     echo(htmlentities($row['last_name']));
     echo("</td><td>");
     echo(htmlentities($row['membership']));
+    echo("</td><td>");
+    echo(htmlentities($row['department']));
   if(isset($_SESSION['name'])){
     echo("</td><td>");
     echo('<a href="edit.php?profile_id='.$row['profile_id'].'">Edit</a> / ');
@@ -57,8 +69,13 @@ while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
 }
 
 ?>
-  </table>
+      </table>
+    </div>
+  </div>
+</div>
 <?php
+include 'footer.php';
+?>
   if(isset($_SESSION['name'])){
     echo('<a href="add.php">Add New</a>');
     }

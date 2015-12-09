@@ -40,13 +40,10 @@ if ( isset($_SESSION['error']) ) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>MISC login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../static/img/iconthumb.jpg">
-    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/database.css">
-</head>
+<title>MISC Admin Login</title>
+<?php
+  include 'header.php';
+?>
 <!--
 Password: 'umich' + acronym (all lowercase, no spaces)
 Name: Administrator // Sunny // Xiaojie //Isabel // Pei-Yao
@@ -61,4 +58,7 @@ Email: misc@gmail.com // syschoi@umich.edu // liuxj@umich.edu // imgao@umich.edu
 <input type="text" name="pass" id="id_1723"><br/>
 <input type="submit" value="Log In">
 </form>
+<?php
+include 'footer.php';
+?>
 </body>

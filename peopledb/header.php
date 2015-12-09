@@ -12,6 +12,7 @@
 	<meta charset="UTF-8">
 
 </head>
+<body>  <!--//added this, don't know if it's gonna break something  -->
 <header>
     <nav class="navbar-wrapper navbar-default">
           <div class="container">
@@ -33,7 +34,7 @@
                         <a href="event.html">Event</a>
                         <a href="people.html">People</a>
                         <a href="aboutUs.html">About Us</a>
-                        <a class="current-demo" href="contact.html">Contact</a>
+                        <a href="contact.html">Contact</a>
                     </nav>
                 </div>
             </div>

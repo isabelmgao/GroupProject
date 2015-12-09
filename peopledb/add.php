@@ -35,6 +35,9 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
     // Check if image file is a actual image or fake image
+  if (empty($_FILES['fileToUpload']['name'])) {
+    $target_file = "img/noimage.jpg";
+  }else {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check === false) {
         $_SESSION['error']= "File is not an image.";
@@ -61,14 +64,16 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
         header("Location: add.php");
         return;
     }
+  }
 
     //text fields
     $stmt = $pdo->prepare('INSERT INTO Profile
-        (user_id, first_name, last_name, department, filename, membership) VALUES ( :uid, :fn, :ln, :depar, :file, :member )');
+        (user_id, first_name, last_name, department, filename, membership, website) VALUES ( :uid, :fn, :ln, :depar, :file, :member, :web )');
     $stmt->execute(array(
         ':uid' => $_SESSION['user_id'],
         ':fn' => $_POST['first_name'],
         ':ln' => $_POST['last_name'],
+        ':web' => $_POST['website'],
         ':depar' => $_POST['department'],
         ':member' => $_POST['membership'],
         ':file' => $target_file));
@@ -94,45 +99,48 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
 include 'header.php';
 
   if ( isset($_SESSION['error']) ) {
-    echo('<p class="success">'.htmlentities($_SESSION['error'])."</p>\n");
+    echo('<p class="flash-error">'.htmlentities($_SESSION['error'])."</p>\n");
     unset($_SESSION['error']);
   }
   if ( isset($_SESSION['success']) ) {
-    echo('<p class="error">'.htmlentities($_SESSION['success'])."</p>\n");
-    unset($_SESSION['success']);
+      echo('<img class="flash-success" src="img/checkbox.jpg"><p class="flash-success">'.htmlentities($_SESSION['success'])."</p>\n");
+      unset($_SESSION['success']);
   }
 ?>
-<h1 class="add">Add a member</h1>
-<form class="add" method="post" enctype="multipart/form-data">
-<p>First Name:
-<input type="text" name="first_name" size="60"/></p>
-<p>Last Name:
-<input type="text" name="last_name" size="60"/></p>
-<p>Department:
-<input type="text" name="department" size="60"/></p>
-<p> &nbsp &nbsp Website:
-<input id="inchright" type="text" name="department" size="60"/></p>
-<!-- Upload photo -->
-<div class="picUpload">
-<p> Upload a profile picture (if available):</p>
-<input type="file" name="fileToUpload" id="fileToUpload"/>
-</div>
-<p class="membership">Member Status:</p>
-<select name="membership">
+  <h1 class="add">Add a member</h1>
+  <form class="add" method="post" enctype="multipart/form-data">
+    <p>First Name:
+      <input type="text" name="first_name" size="60" required/></p>
+    <p>Last Name:
+      <input type="text" name="last_name" size="60" required/></p>
+    <p>Department:
+      <input type="text" name="department" size="60" required/></p>
+    <p>Website:
+      <input id="inchright" type="text" name="website" size="60"/></p>
+  <!-- Upload photo -->
+  <div class="picUpload">
+    <p> Upload a profile picture (if available):</p>
+      <input type="file" name="fileToUpload" id="fileToUpload"/>
+  </div>
+    <p class="membership">Member Status:</p>
+    <select name="membership">
         <option value="0">Choose...</option>
         <option value="faculty">Faculty</option>
         <option value="0">______________</option>
-        <option value="students">PhD Student</option> <!-- must match get id parameter -->
-        <option value="students">Master's Student</option>
+        <option value="student">PhD Student</option> <!-- must match get id parameter -->
+        <option value="student">Master's Student</option>
         <option value="0">______________</option>
-        <option value="alumni">Alumnus</option>
-</select>
-<p>
-<input type="submit" value="Add">
-<input type="submit" name="cancel" value="Cancel">
-</p>
-
+        <option value="alum">Alumnus</option>
+    </select>
+  <p>
+  <input type="submit" value="Add">
+  </p>
 </form>
+
+<form method="post">
+  <input type="submit" name="cancel" value="Cancel">
+</form>
+
 <?php
 include 'footer.php';
 ?>

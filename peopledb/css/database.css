@@ -65,6 +65,62 @@ input[type=submit]{
   /*margin-right: 415px;*/
 }
 
+/*.col-centered{
+float: none;
+margin: 0 auto;
+}*/
+
 /*select{
   margin-right: 387px;
 }*/
+th, td{
+  text-align: center;
+}
+
+body > h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.text-center{
+  margin-bottom: 45px;
+}
+
+.margin-bottom{
+  margin-bottom: 40px;
+}
+
+.home-nav{
+  display: block;
+  margin-top: 100px;
+  width: 200px;
+}
+
+.flash-success{
+  display: block;
+  margin:0 auto;
+  color: green;
+  font-size: 20px;
+  text-align: center;
+}
+
+.flash-error{
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  margin-right: 100px
+}
+
+.delete{
+  margin-top: 40px;
+  font-size: 25px;
+}
+
+.delete-name{
+  color:grey;
+  font-size: 35px;
+}
+
+#current-photo{
+  text-decoration: underline;
+}
