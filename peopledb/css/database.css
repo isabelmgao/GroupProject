@@ -123,4 +123,21 @@ body > h1{
 
 #current-photo{
   text-decoration: underline;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.panel-height{
+  height:100%;
+}
+.panel{
+  height:100%;
+}
+.panel-body{
+  height:100%;
+  background-color: #124c87;
+  color:white;
+}
+.panel-default>.panel-heading{
+  background-color: #ffc824;
 }

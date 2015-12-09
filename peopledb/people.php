@@ -18,7 +18,7 @@ if ( ! isset($_SESSION['name']) ) {
 <body>
   <div class="container">
      <!-- <div class="row"> -->
-        <div class="col-sm-3">
+        <div class="col-sm-2 panel-height">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h2 class="panel-title">Members</h2>
@@ -34,7 +34,7 @@ if ( ! isset($_SESSION['name']) ) {
         </div>
 
         <!-- vvvvvvvvvvvvvv-FACE OF THE ORG-vvvvvvvvvvvvvv -->
-    <div class="col-sm-9">
+    <div class="col-sm-10">
         <div class="row">
 
 <?php
