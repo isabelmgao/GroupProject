@@ -9,7 +9,7 @@ $error = false;
 if ( isset($_POST['email']) && isset($_POST['pass'])) {
     if ( strlen($_POST['email']) < 1 || strlen($_POST['pass']) < 1) {
     $_SESSION['error'] = "Email and password are required";
-    header("Location: index.php");
+    header("Location: login.php");
     exit();
   }else{
     $check = hash('md5', $salt.$_POST['pass']);
@@ -20,7 +20,7 @@ if ( isset($_POST['email']) && isset($_POST['pass'])) {
       if ( $row !== false ) {
         $_SESSION['name'] = $row['name']; //these come from $row array, which extracts data from db in SELECT statement above, stores in $SESSION so that it can be transmitted acros php files
         $_SESSION['user_id'] = $row['user_id'];
-        header("Location: home_nav.php");
+        header("Location: index.php");
         exit();
       }else{
       $_SESSION['error'] = "Incorrect Password";

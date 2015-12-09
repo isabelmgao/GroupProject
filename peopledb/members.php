@@ -49,7 +49,7 @@ echo('<p><a href="login.php">Login</a></p>');
     echo("</tr></thead>");
 
   // echo('<table border="1">'."\n");
-$stmt = $pdo->query("SELECT * FROM Profile");
+$stmt = $pdo->query("SELECT * FROM Profile ORDER BY last_name");
 while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
     echo "<tr><td>";
     echo(htmlentities($row['first_name']));

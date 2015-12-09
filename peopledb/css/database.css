@@ -141,3 +141,10 @@ body > h1{
 .panel-default>.panel-heading{
   background-color: #ffc824;
 }
+.panel-title a{
+  font-size: 18px;
+}
+
+.panel-title h1{
+  font-size: 20px;
+}

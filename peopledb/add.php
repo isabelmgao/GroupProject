@@ -7,7 +7,7 @@ if ( ! isset($_SESSION['name']) ) {
 }
 
 if(isset($_POST['cancel'])){
-  header( 'Location: home_nav.php' ) ;
+  header( 'Location: index.php' ) ;
   return;
 }
 
@@ -79,7 +79,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
         ':file' => $target_file));
 
     $_SESSION['success']="Record added";
-    header("Location: home_nav.php");
+    header("Location: index.php");
     return;
   }
  ?>

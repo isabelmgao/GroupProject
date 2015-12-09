@@ -75,7 +75,7 @@ $stmt->execute(array(":xyz" => $_GET['profile_id']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if ( $row === false ) {
     $_SESSION['error'] = 'Bad value for profile_id';
-    header( 'Location: home_nav.php' );
+    header( 'Location: index.php' );
     return;
 }
 $fn = htmlentities($row['first_name']);

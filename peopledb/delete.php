@@ -40,7 +40,7 @@ if ( $row === false ) {
   <form method="post" action="delete.php">
 <?php
   echo'<label class="delete">Are you sure you want to delete:<br>';
-  echo('<p class="delete-name">'.htmlentities($row['first_name']).htmlentities($row['last_name']).'</p>');
+  echo('<p class="delete-name">'.htmlentities($row['first_name']).' &nbsp'.htmlentities($row['last_name']).'</p>');
   // echo'</label> <label class="delete">Last name: &nbsp';
   // echo(htmlentities($row['last_name']));
   echo'</label>';

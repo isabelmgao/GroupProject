@@ -21,7 +21,7 @@ if ( ! isset($_SESSION['name']) ) {
         <div class="col-sm-2 panel-height">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2 class="panel-title">Members</h2>
+              <h1 class="panel-title">Members</h1>
             </div>
             <div class="panel-body">
 <?php
@@ -35,12 +35,12 @@ if ( ! isset($_SESSION['name']) ) {
 
         <!-- vvvvvvvvvvvvvv-FACE OF THE ORG-vvvvvvvvvvvvvv -->
     <div class="col-sm-10">
-        <div class="row">
+        <!-- <div class="row"> -->
 
 <?php
 if(!isset($_GET['id'])){
 $stmt = $pdo->query("SELECT first_name, last_name, department, website, filename, membership
-                FROM Profile");
+                FROM Profile ORDER BY last_name");
 while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){
     echo '<div class="col-sm-3">
             <img class="img-rounded" src="'.$row['filename'].'"/>
@@ -50,17 +50,17 @@ while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){
     echo '</p> </div>';
   }
 }else{
-    $stmt = $pdo->query("SELECT first_name, last_name, department, website, filename, membership
-                    FROM Profile WHERE membership = :member");
+    $stmt = $pdo->prepare("SELECT first_name, last_name, department, website, filename, membership
+                    FROM Profile WHERE membership = :member ORDER BY last_name");
     $stmt->execute(array(":member" => $_GET['id']));
     while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) )
     {
-        echo '<div class="col-sm-3">
-                <img class="img-rounded" src="'.$row['filename'].'"/>
-                <p class="caption">';
-        echo '<a href="'.htmlentities($row['website']).'" target="_blank">'.$row['first_name'].' '.htmlentities($row['last_name']).'</a>';
-        echo ', '.htmlentities($row['department']);
-        echo '</p> </div>';
+      echo '<div class="col-sm-3">
+              <img class="img-rounded" src="'.$row['filename'].'"/>
+              <p class="caption">';
+      echo '<a href="'.htmlentities($row['website']).'" target="_blank">'.$row['first_name'].' '.htmlentities($row['last_name']).'</a>';
+      echo ', '.htmlentities($row['department']);
+      echo '</p> </div>';
     }
   }
 ?>
