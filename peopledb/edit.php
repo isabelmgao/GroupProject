@@ -17,7 +17,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
     header("Location: edit.php?id=" . $_POST["profile_id"]);
     return;
   }
-  if($_POST['membership']===0){
+  if($_POST['membership2']===0){
      $_SESSION['error'] = "Invalid member status. Please select from the drop down menu below";
      header("Location: edit.php?profile_id=" . $_REQUEST["profile_id"]);
      return;
@@ -63,7 +63,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
         ':fn' => $_POST['first_name'],
         ':ln' => $_POST['last_name'],
         ':website' => $_POST['website'],
-        ':member' => $_POST['membership'],
+        ':member' => $_POST['membership2'],
         ':depar' => $_POST['department'],
         ':file' => $target_file));
     $_SESSION['success'] = 'Record updated';

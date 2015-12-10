@@ -34,7 +34,7 @@
                         <a href="event.html">Event</a>
                         <a href="people.html">People</a>
                         <a href="aboutUs.html">About Us</a>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </nav>
                 </div>
             </div>

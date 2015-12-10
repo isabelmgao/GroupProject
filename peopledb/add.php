@@ -22,7 +22,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
           return;
     }
 
-    if($_POST['membership']===0){
+    if(strlen($_POST['membership'])<2){
       $_SESSION['error'] = "Please select member status: faculty, grad, or alumni";
        header("Location: add.php");
        return;
@@ -123,7 +123,7 @@ include 'header.php';
       <input type="file" name="fileToUpload" id="fileToUpload"/>
   </div>
     <p class="membership">Member Status:</p>
-    <select name="membership">
+    <select name="membership" required>
         <option value="0">Choose...</option>
         <option value="faculty">Faculty</option>
         <option value="0">______________</option>

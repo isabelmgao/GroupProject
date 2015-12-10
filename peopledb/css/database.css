@@ -108,7 +108,7 @@ body > h1{
   color: red;
   font-size: 20px;
   text-align: center;
-  margin-right: 100px
+  /*margin-right: 100px*/
 }
 
 .delete{
@@ -135,11 +135,11 @@ body > h1{
 }
 .panel-body{
   height:100%;
-  background-color: #124c87;
+  background-color: #002c5a;
   color:white;
 }
 .panel-default>.panel-heading{
-  background-color: #ffc824;
+  background-color: #ffcb00;
 }
 .panel-title a{
   font-size: 18px;
@@ -147,4 +147,8 @@ body > h1{
 
 .panel-title h1{
   font-size: 20px;
+}
+
+#short{
+  margin-top: 0px;
 }

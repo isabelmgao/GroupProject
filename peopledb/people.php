@@ -25,9 +25,10 @@ if ( ! isset($_SESSION['name']) ) {
             </div>
             <div class="panel-body">
 <?php
+              echo'<h3 class="panel-title"><a href="people.php">All</a></h3>';
               echo'<h3 class="panel-title"><a href="people.php?id=faculty">Faculty</a></h3>';
               echo'<h3 class="panel-title"><a href="people.php?id=student">Students</a></h3>';
-              echo'<h3 class="panel-title"><a href="people.php?id=alum">Staff</a></h3>';
+              echo'<h3 class="panel-title"><a href="people.php?id=alum">Alumni</a></h3>';
 ?>
             </div>
           </div>
@@ -45,7 +46,10 @@ while ( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){
     echo '<div class="col-sm-3">
             <img class="img-rounded" src="'.$row['filename'].'"/>
             <p class="caption">';
-    echo '<a href="'.htmlentities($row['website']).'" target="_blank">'.$row['first_name'].' '.htmlentities($row['last_name']).'</a>';
+  if (isset($row['website'])){
+    echo '<a href="'.htmlentities($row['website']).'" target="_blank">';
+  }
+    echo htmlentities($row['first_name']).' '.htmlentities($row['last_name']).'</a>';
     echo ', '.htmlentities($row['department']);
     echo '</p> </div>';
   }

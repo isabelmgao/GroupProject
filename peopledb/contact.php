@@ -43,21 +43,21 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
         exit;
     }
 
-    $smtp = Mail::factory('smtp', array(
-            'host' => 'ssl://smtp.gmail.com',
-            'port' => '465',
-            'auth' => true,
-            'username' => 'isabelmgao@gmail.com',
-            'password' => 'running8'
-        ));
+    // $smtp = Mail::factory('smtp', array(
+    //         'host' => 'ssl://smtp.gmail.com',
+    //         'port' => '465',
+    //         'auth' => true,
+    //         'username' => 'isabelmgao@gmail.com',
+    //         'password' => 'running8'
+    //     ));
+    //
+    // $mail = $smtp->send($to, $headers, $body);
 
-    $mail = $smtp->send($to, $headers, $body);
-
-    // if (mail ($to, $subject, $body, $headers)) {
+    if (mail ($to, $subject, $body, $headers)) {
         $_SESSION['success'] = "Thanks for contacting us!";
         header("Location: form3.php");
         return;
-    // }
+    }
   }
 
     else {
